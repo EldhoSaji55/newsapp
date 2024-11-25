@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/utils/constants/color_constants.dart';
 
 import 'package:newsapp/view/Global_Widgets/AppbarWidget.dart';
+import 'package:newsapp/view/bottom_navigationbar/bottomnavigation.dart';
 import 'package:newsapp/view/discover_screen/discover_screen.dart';
 import 'package:newsapp/view/home_screen/home_screen.dart';
 import 'package:newsapp/view/publisher_screen/publisher_screen.dart';
@@ -77,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
+                          builder: (context) => BottomnavigationScreens(),
                         ));
                   },
                   style: ElevatedButton.styleFrom(
