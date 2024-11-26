@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newsapp/utils/constants/color_constants.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   final String imageUrl;
+  final String Url;
   final String title;
   final String category;
   final String channelName;
@@ -17,6 +19,7 @@ class NewsDetailScreen extends StatelessWidget {
     required this.channelName,
     required this.publishDate,
     required this.content,
+    this.Url = "",
   }) : super(key: key);
 
   @override
@@ -74,7 +77,7 @@ class NewsDetailScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
+                  Column(
                     children: [
                       Chip(
                         label: Text(
@@ -108,6 +111,19 @@ class NewsDetailScreen extends StatelessWidget {
                   fontSize: 16,
                   height: 1.5,
                   color: Colors.black87,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                Url,
+                style: GoogleFonts.sourceSans3(
+                  fontSize: 16,
+                  height: 1.5,
+                  color: ColorConstants.primaryColor,
                 ),
               ),
             ),

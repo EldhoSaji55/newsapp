@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/controller/home_screen_controller/home_screen_controller.dart';
+import 'package:newsapp/controller/news_detail_controller/news_details_controller.dart';
 import 'package:newsapp/view/splash_screen/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => HomeScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NewsDetailsController(),
         )
       ],
       child: MaterialApp(

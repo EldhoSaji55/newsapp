@@ -176,15 +176,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => NewsDetailScreen(
-                                        imageUrl:
-                                            "https://via.placeholder.com/300",
-                                        title:
-                                            "Breaking News: Flutter is Amazing!",
+                                        imageUrl: RecoNewsController
+                                                .allArticles[index]
+                                                .urlToImage ??
+                                            "",
+                                        title: RecoNewsController
+                                                .allArticles[index].title ??
+                                            "",
                                         category: "Technology",
-                                        channelName: "Tech World",
-                                        publishDate: "Nov 23, 2024",
-                                        content:
-                                            "Flutter continues to grow as one of the most popular frameworks for building cross-platform applications. Developers love its flexibility and performance.",
+                                        channelName: RecoNewsController
+                                                .allArticles[index]
+                                                .source!
+                                                .name ??
+                                            "",
+                                        publishDate: RecoNewsController
+                                            .allArticles[index].publishedAt
+                                            .toString(),
+                                        content: RecoNewsController
+                                                .allArticles[index].content ??
+                                            "",
+                                        Url: RecoNewsController
+                                                .allArticles[index].url ??
+                                            "",
                                       ),
                                     ),
                                   );
